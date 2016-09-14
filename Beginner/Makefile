@@ -5,7 +5,9 @@ all:
 	gcc -o ATM ATM.c $(CFLAGS)
 	gcc -o Enormous-Input-Test Enormous-Input-Test.c $(CFLAGS)
 	gcc -o Factorial Factorial.c $(CFLAGS)
+	gcc -o Small-Factorial Small-Factorial.c $(CFLAGS)
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
-	Enormous-Input-Test Factorial
+	Enormous-Input-Test Factorial Small-Factorial	\
+	a.out
