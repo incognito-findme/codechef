@@ -7,8 +7,9 @@ all:
 	gcc -o Factorial Factorial.c $(CFLAGS)
 	gcc -o Small-Factorial Small-Factorial.c $(CFLAGS)
 	gcc -o Tsort Tsort.c $(CFLAGS)
+	gcc -o TLG TLG.c $(CFLAGS)
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
-	Tsort a.out
+	Tsort TLG a.out
