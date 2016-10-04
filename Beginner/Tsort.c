@@ -1,64 +1,39 @@
+/* https://www.codechef.com/problems/TSORT */
 #include <stdio.h>
 
-unsigned long long A[10000];
-unsigned long long partition(unsigned long long first, unsigned long long last)
-{
-	unsigned long long pivot = A[first];
-	unsigned long long temp, leftmark, rightmark;
-
-	leftmark = first + 1;
-	rightmark = last;
-
-	while (1)
-	{
-		while (leftmark <= rightmark &&
-		       A[leftmark] <= pivot) {
-			leftmark++;
-		}
-
-		while (A[rightmark] >= pivot &&
-			rightmark >= leftmark) {
-			rightmark--;
-		}
-
-		if (rightmark < leftmark)
-			break;
-
-		temp = A[leftmark];
-		A[leftmark] = A[rightmark];
-		A[rightmark] = temp;
-	}
-
-	temp = A[first];
-	A[first] = A[rightmark];
-	A[rightmark] = temp;
-
-	return rightmark;
-}
-
-void qsort(unsigned long long first, unsigned long long last)
-{
-	unsigned long long split;
-
-	if (first >= last)
-		return;
-	split = partition(first, last);
-	qsort(first, split - 1);
-	qsort(split+1, last);
-
-}
+unsigned long long A[1000000] = {0,};
+unsigned long long C[1000000] = {0,};
+unsigned long long R[1000000] = {0,};
 
 int main(void)
 {
-	unsigned long long i,j;
+	unsigned long long i,j, max = 0;
 
 	scanf("%llu", &i);
-	for (j=0; j<i; j++)
+	for (j=1; j<=i; j++) {
 		scanf("%llu",&A[j]);
-	qsort(0, i-1);
+		max = (max < A[j] ? A[j] : max);
+	}
 
-	for (j=0; j<i; j++)
-		printf("%llu\n",A[j]);
+	for (j = 1; j <= max; j++) { C[A[j]] = C[A[j]]+1; }
 
+//	for(j = 0; j < i; j++){ printf ("%llu ", A[j]); }
+//	printf("\n");
+
+//	for(j = 0; j <=max; j++){ printf ("%llu ", C[j]); }
+//	printf("\n");
+
+	for (j = 2; j <= max; j++) {
+		C[j] = C[j] + C[j -1 ];
+	}
+//	for(j = 0; j <=max; j++){ printf ("%llu ", C[j]); }
+//	printf("\n");
+
+	for(j =1; j <= i; j++) {
+		R[C[A[j]]] = A[j];
+		C[A[j]] = C[A[j]] - 1;
+	}
+	for(j = 1; j <= i; j++){ printf ("%llu ", R[j]); }
+	printf("\n");
 	return (0);
 }
