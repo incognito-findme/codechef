@@ -12,9 +12,10 @@ all:
 	gcc -o SUMTRIAN SUMTRIAN.c $(CFLAGS)
 	gcc -o PERMUT2 PERMUT2.c $(CFLAGS)
 	gcc -o CIELRCPT CIELRCPT.c $(CFLAGS) -lm
+	gcc -o ONP ONP.c $(CFLAGS)
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
 	Tsort TLG MUFFINS3 SUMTRIAN PERMUT2 CIELRCPT	\
-	a.out
+	ONP a.out
