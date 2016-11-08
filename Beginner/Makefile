@@ -15,10 +15,11 @@ all:
 	gcc -o ONP ONP.c $(CFLAGS)
 	gcc -o FLOW001 FLOW001.c $(CFLAS)
 	gcc -o RECIPE RECIPE.c $(CFLAS)
-	gcc -o SNAPE SNAPE.c $(CFLAGS)
+	gcc -o SNAPE SNAPE.c $(CFLAGS) -lm 
+	gcc -o FLOW006 FLOW006.c $(CFLAGS) 
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
 	Tsort TLG MUFFINS3 SUMTRIAN PERMUT2 CIELRCPT	\
-	ONP FLOW001 RECIPE SNAPE a.out
+	ONP FLOW001 RECIPE SNAPE FLOW006 a.out
