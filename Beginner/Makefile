@@ -18,9 +18,11 @@ all:
 	gcc -o SNAPE SNAPE.c $(CFLAGS) -lm 
 	gcc -o FLOW006 FLOW006.c $(CFLAGS) 
 	gcc -o REMISS REMISS.c $(CFLAGS) 
+	gcc -o FLOW002 FLOW002.c $(CFLAS)
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
 	Tsort TLG MUFFINS3 SUMTRIAN PERMUT2 CIELRCPT	\
-	ONP FLOW001 RECIPE SNAPE FLOW006 REMISS a.out
+	ONP FLOW001 RECIPE SNAPE FLOW006 REMISS FLOW002	\
+	a.out	
