@@ -21,10 +21,11 @@ all:
 	gcc -o FLOW002 FLOW002.c $(CFLAGS)
 	gcc -o LUCKFOUR LUCKFOUR.c $(CFLAGS)
 	gcc -o START01 START01.c $(CFLAGS)
+	gcc -o FLOW004 FLOW004.c $(CFLAGS)
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
 	Tsort TLG MUFFINS3 SUMTRIAN PERMUT2 CIELRCPT	\
 	ONP FLOW001 RECIPE SNAPE FLOW006 REMISS FLOW002	\
-	LUCKFOUR START01 a.out	
+	LUCKFOUR START01 FLOW004 a.out	
