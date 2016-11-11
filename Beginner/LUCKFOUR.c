@@ -13,7 +13,7 @@ int main(void)
 	t = number;
 	while(testcase--) {
 		number = t;
-		memset(number, 0, sizeof(number));
+		memset(number, 0, sizeof(1000001));
 		count = 0;
 		scanf("%s", number);
 		while((number = strstr(number, "4")) != NULL) {
