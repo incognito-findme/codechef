@@ -23,10 +23,11 @@ all:
 	gcc -o START01 START01.c $(CFLAGS)
 	gcc -o FLOW004 FLOW004.c $(CFLAGS)
 	gcc -o COMM3 COMM3.c $(CFLAGS)
+	gcc -o FSQRT FSQRT.c $(CFLAGS) -lm
 
 clean:
 	rm -rf Life-the-Universe-Everything ATM 	\
 	Enormous-Input-Test Factorial Small-Factorial	\
 	Tsort TLG MUFFINS3 SUMTRIAN PERMUT2 CIELRCPT	\
 	ONP FLOW001 RECIPE SNAPE FLOW006 REMISS FLOW002	\
-	LUCKFOUR START01 FLOW004 COMM3 a.out
+	LUCKFOUR START01 FLOW004 COMM3 FSQRT a.out
